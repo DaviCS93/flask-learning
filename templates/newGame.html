@@ -1,6 +1,6 @@
 {% extends "template.html" %}
 {% block content %}
-<form action="\create" method="post">
+<form action="{{ url_for('create') }}" method="post">
     <fieldset>
     <div class="form-group">
         <label for="name">Name</label>
@@ -14,7 +14,7 @@
         <label for="console">Console</label>
         <input type="text" id="console" name="console" class="form-control">
     </div>
-    <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+    <button type="submit" class="btn btn-primary btn-salvar">Save</button>
     </fieldset>
 </form>
 {% endblock %}
