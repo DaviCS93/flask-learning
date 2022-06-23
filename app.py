@@ -1,5 +1,5 @@
 from imp import reload
-from flask import Flask, render_template,request
+from flask import Flask, redirect, render_template,request
 
 class Game:
     def __init__(self,name,category,console):
@@ -31,8 +31,6 @@ def Create():
     console = request.form['console']
     newGame = Game(name,category,console)
     games.append(newGame)
-    variables = {'title':'Game Library'}
-    return render_template('list.html',**variables,games=games)
- 
-
+    return redirect('/')
+    
 app.run(debug=True)
